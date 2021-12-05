@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increase, increment, toggleHandle } from "../store";
+import { decrement, increase, increment, toggleHandle } from "../store/counter";
 import classes from "./Counter.module.css";
 
 const Counter = () => {
-  const counter = useSelector((state) => state.counter);
-  const showToggle = useSelector((state) => state.showCounter);
+  const counter = useSelector((state) => state.counter.counter);
+  const showToggle = useSelector((state) => state.counter.showCounter);
 
   const dispatch = useDispatch();
 
