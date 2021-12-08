@@ -1,28 +1,22 @@
-import { Route, Switch, Redirect } from "react-router";
-import Layout from "./components/layout/Layout";
-import AllQuotes from "./pages/AllQuotes";
-import NewQuote from "./pages/NewQuote";
-import QuoteDetail from "./pages/QuoteDetail";
-import NotFound from "./pages/NotFound";
+import { Switch, Route } from 'react-router-dom';
+
+import Layout from './components/Layout/Layout';
+import UserProfile from './components/Profile/UserProfile';
+import AuthPage from './pages/AuthPage';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
     <Layout>
       <Switch>
-        <Route path="/" exact>
-          <Redirect to="quotes" />
+        <Route path='/' exact>
+          <HomePage />
         </Route>
-        <Route path="/quotes" exact>
-          <AllQuotes />
+        <Route path='/auth'>
+          <AuthPage />
         </Route>
-        <Route path="/quotes/:quoteId">
-          <QuoteDetail />
-        </Route>
-        <Route path="/new-quote">
-          <NewQuote />
-        </Route>
-        <Route path="*">
-          <NotFound />
+        <Route path='/profile'>
+          <UserProfile />
         </Route>
       </Switch>
     </Layout>
